@@ -1,5 +1,5 @@
 import { Tab } from './CommonTab'
-import WelcomeScreen from './WelcomeScreen.vue'
+import WelcomeScreen from '/@/components/WelcomeScreen/Main.vue'
 import { TextTab } from '../Editors/Text/TextTab'
 import Vue from 'vue'
 import { App } from '/@/App'

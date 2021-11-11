@@ -1,5 +1,5 @@
 <template>
-	<Widget v-bind="$attrs">
+	<Widget v-bind="$attrs" style="text-align: center">
 		<Logo
 			alt="Logo of bridge. v2"
 			style="max-height: 100%; max-width: 100%"

@@ -6,8 +6,10 @@
 		<LogoWidget size="md" />
 		<LogoWidget size="sm" :row="3" :column="2" />
 		<LogoWidget size="sm" :row="3" :column="3" />
-		<LogoWidget size="lg" />
+		<QuickActions />
 		<LogoWidget size="xl" />
+		<RecentFiles />
+		<RecentProjects />
 	</div>
 </template>
 
@@ -18,6 +20,9 @@ import { App } from '/@/App.ts'
 import { ProjectMixin } from '/@/components/Mixins/Project.ts'
 
 import LogoWidget from './Widget/LogoWidget.vue'
+import QuickActions from './Widget/QuickActions.vue'
+import RecentFiles from './Widget/RecentFiles.vue'
+import RecentProjects from './Widget/RecentProjects.vue'
 
 export default {
 	name: 'welcome-screen',
@@ -25,6 +30,9 @@ export default {
 	components: {
 		ActionViewer,
 		LogoWidget,
+		QuickActions,
+		RecentFiles,
+		RecentProjects,
 	},
 
 	async mounted() {
@@ -76,6 +84,6 @@ export default {
 <style scoped>
 .widget-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
 }
 </style>

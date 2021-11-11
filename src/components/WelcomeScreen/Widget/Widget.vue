@@ -1,6 +1,6 @@
 <template>
 	<div class="widget" :style="computedStyles">
-		<BridgeSheet class="widget-sheet">
+		<BridgeSheet class="widget-sheet pa-2">
 			<slot />
 		</BridgeSheet>
 	</div>
@@ -17,7 +17,8 @@ export default {
 		size: {
 			type: String,
 			default: 'md',
-			validator: (size) => ['sm', 'md', 'lg', 'xl'].includes(size),
+			validator: (size) =>
+				['sm', 'md', 'lg', 'lg-sq', 'xl'].includes(size),
 		},
 		column: {
 			type: Number,
@@ -42,6 +43,12 @@ export default {
 					spanX = 3
 					spanY = 2
 					aspectRatio = '3 / 2'
+					break
+				}
+				case 'lg-sq': {
+					spanX = 3
+					spanY = 3
+					aspectRatio = '1 / 1'
 					break
 				}
 				case 'xl': {
@@ -74,7 +81,6 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
 }
 .widget-sheet {
 	overflow: hidden;

@@ -1,6 +1,6 @@
 <template>
 	<div class="widget" :style="computedStyles">
-		<BridgeSheet class="widget-sheet pa-2">
+		<BridgeSheet v-ripple="clickable" class="widget-sheet pa-2">
 			<slot />
 		</BridgeSheet>
 	</div>
@@ -14,6 +14,7 @@ export default {
 		BridgeSheet,
 	},
 	props: {
+		clickable: Boolean,
 		size: {
 			type: String,
 			default: 'md',

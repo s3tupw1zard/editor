@@ -1,30 +1,32 @@
 <template>
 	<div class="widget-container pa-1">
-		<LogoWidget size="sm" />
-		<LogoWidget size="sm" :row="2" />
-		<LogoWidget size="sm" :row="3" />
-		<LogoWidget size="md" />
-		<LogoWidget size="sm" :row="3" :column="2" />
-		<LogoWidget size="sm" :row="3" :column="3" />
-		<QuickActions />
-		<LogoWidget size="xl" />
-		<RecentFiles />
-		<RecentProjects />
+		<LogoWidget size="lg-sq" :column="4" />
+
 		<ExternalLink
+			:row="4"
+			:column="4"
 			iconSrc="https://bedrock.dev/favicon/android-chrome-192x192.png"
 			url="https://bedrock.dev"
 			size="sm"
 		/>
 		<ExternalLink
+			:row="4"
+			:column="5"
 			iconSrc="https://wiki.bedrock.dev/favicon.ico"
 			url="https://wiki.bedrock.dev"
 			size="sm"
 		/>
 		<ExternalLink
+			:row="4"
+			:column="6"
 			iconSrc="https://minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/minecraft-creeper-face.jpg"
 			url="https://docs.microsoft.com/en-us/minecraft/creator/"
 			size="sm"
 		/>
+
+		<QuickActions :row="6" :column="1" />
+		<RecentFiles :row="6" :column="4" />
+		<RecentProjects :row="6" :column="7" />
 	</div>
 </template>
 
@@ -101,6 +103,27 @@ export default {
 <style scoped>
 .widget-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(20, 1fr);
+	grid-auto-columns: 0;
+	grid-auto-rows: 0;
+}
+
+@media (min-width: 600px) {
+	.widget-container {
+		grid-template-columns: repeat(6, 1fr);
+	}
+}
+
+@media (min-width: 1000px) {
+	.widget-container {
+		grid-template-columns: repeat(9, 1fr);
+	}
+}
+
+@media (min-width: 1904px) {
+	.widget-container {
+		grid-template-columns: repeat(12, 1fr);
+	}
 }
 </style>
